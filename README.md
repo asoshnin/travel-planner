@@ -14,6 +14,8 @@
 
 Turn one travel prompt into a print-friendly itinerary with live lodging options and honest fallback labels — no invented prices.
 
+> **Note:** This is an **early release (v0.1.0)**. The plugin is stable and tested, but subject to refinement based on community feedback. Please [report issues](https://github.com/asoshnin/travel-planner/issues) and feature requests — they directly shape the roadmap to v1.0.
+
 ---
 
 ## Why it's different
@@ -160,3 +162,11 @@ Issues and pull requests welcome.
 ## License
 
 MIT — see [`LICENSE`](LICENSE).
+
+---
+
+## Developer Notes
+
+The `commit-push.ps1` and `commit-push.bat` scripts in the repo root are **author-only convenience tools** for local development. They are excluded from distribution (.gitignore) and are not needed to use the plugin. Community members can ignore these files; they will not be included in any plugin distribution or marketplace listing.
+
+If you're maintaining a fork and want similar workflow scripts, see these files for reference — they now use relative paths (script-directory-relative) so they'll work on any machine.
