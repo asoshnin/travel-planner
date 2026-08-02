@@ -10,11 +10,31 @@
   <img alt="Claude Cowork | Claude Code" src="https://img.shields.io/badge/Claude-Cowork%20%7C%20Code-6b6259?style=flat-square">
 </p>
 
-Two skills that fix the two ways AI trip-planning usually falls apart: hotel prices that are hallucinated or missing entirely, and itineraries that read like a bare list of links instead of something you'd actually want to follow.
+## One-line promise
+
+Turn one travel prompt into a print-friendly itinerary with live lodging options and honest fallback labels — no invented prices.
 
 ---
 
-## See it in action first
+## Why it's different
+
+- **Live lodging search** through supported booking sites instead of inventing hotel results
+- **Print-friendly HTML itinerary** with maps, photos, and daily structure — not just a chat transcript
+- **Honest fallback behavior** — clearly labeled estimates when live data cannot be verified, rather than fake certainty
+
+---
+
+## Quick start
+
+1. **Install** the plugin in Claude Cowork or Claude Code (see [Installing](#installing) below).
+2. **Paste this prompt:**
+   > Plan a 7-day road trip from Amsterdam through the Mosel and Alsace, 2 adults, relaxed pace, boutique hotels, mid-range budget, English.
+3. **Answer** the short set of clarifying questions (dates, pace, budget, output language).
+4. **Review** the generated HTML itinerary and lodging options.
+
+---
+
+## See it in action
 
 Here's what a single prompt produces:
 
@@ -26,8 +46,6 @@ Here's what a single prompt produces:
 
 The narrative, the lodging comparisons, and the day-by-day structure all come out of that one prompt — no manual formatting, no separate hotel-tab-juggling.
 
-> **This particular trip is a fictional demo, not the author's real vacation** (his actual budget currently tops out at a weekend camping trip, tent included). Every price shown is illustrative, not a live quote — if this repo gets enough stars, maybe someday it'll fund the real thing. Full example is in [`examples/`](examples/).
-
 **Click through to one full stop** (Tuscany, Day 3–4 — photo, narrative, and lodging comparison together):
 
 <p align="center">
@@ -38,7 +56,17 @@ The narrative, the lodging comparisons, and the day-by-day structure all come ou
 
 <p align="center"><i>Click the image to open the live rendered page (opens in a new tab, same file that ships in this repo).</i></p>
 
-A real run searches your confirmed booking sites live and returns three actual, dated listings per stop in this same format — never a bare `[PENDING]` placeholder.
+A real run searches mainstream booking sites (Booking.com, Expedia, Airbnb, etc.) live and returns three actual, dated listings per stop in this same format — never a bare `[PENDING]` placeholder.
+
+> **Note on this demo:** This particular trip is fictional, not the author's real vacation (his actual budget currently tops out at a weekend camping trip, tent included). Every price shown is illustrative, not a live quote. If this repo gets enough stars, maybe someday it'll fund the real thing. Full example is in [`examples/`](examples/).
+
+---
+
+## Who this is for
+
+- Road-trip travelers who want a polished, dated itinerary they can actually use
+- Users who care about real lodging options, not generic hotel suggestions
+- Claude Cowork / Claude Code users who want a shareable, print-friendly final artifact instead of just chat output
 
 ---
 
@@ -46,28 +74,57 @@ A real run searches your confirmed booking sites live and returns three actual, 
 
 | Skill | What it does |
 |---|---|
-| `lodging-search` | Searches live booking sites (a global default, a named regional/payment preset, or your own custom list) for each overnight stop and returns up to 3 positioned options with pros/cons — or an honest, labeled estimate if live search isn't possible. Never returns a bare "pending" placeholder. |
-| `travel-itinerary-builder` | Interactively confirms your traveler profile (dates, pace, budget, output language, and more), then builds a narrative-rich, print-friendly, static HTML itinerary with real lodging cards, licensed and attributed photos, and link-based maps — no API keys required. Every stop also gets a recommended departure time, a parking note, and named restaurants/landmarks with verified opening hours, not just generic categories. |
+| `lodging-search` | Searches live booking sites (a global default, a named regional/payment preset, or your own custom list) for each overnight stop and returns up to 3 ranked options (by guest rating and availability) with pros/cons — or an honest, labeled estimate if live search isn't possible. Never returns a bare "pending" placeholder. |
+| `travel-itinerary-builder` | Interactively confirms your traveler profile (dates, pace, budget, output language, and more), then builds a narrative-rich, print-friendly, static HTML itinerary with real lodging cards, licensed and attributed photos, and link-based maps — no API keys required. Every stop also gets a recommended departure time, a parking note, and named restaurants/landmarks with opening hours, with explicit "not verified" labels where real-time confirmation wasn't available. |
+
+---
 
 ## Why this exists
 
-Most AI-generated itineraries either hallucinate hotel prices or give up on live search entirely and leave a placeholder. `lodging-search` is built specifically to fail *honestly*: it distinguishes a cookie-consent popup from a CAPTCHA from a genuinely empty market, retries sensibly, and always returns either a real result or a clearly labeled estimate — never a silent gap. `travel-itinerary-builder` then makes sure that data, plus the narrative you actually wrote, survives all the way into the final page instead of getting flattened into a bare link list — and it applies the same honesty rule to the logistics that actually get you through a travel day: a recommended departure time (not just a duration), a named parking option, and named restaurants/landmarks with real opening hours, or an explicit "not confirmed" label instead of a plausible-sounding guess.
+Most AI-generated itineraries either hallucinate hotel prices or leave placeholders entirely. The `lodging-search` skill solves this by distinguishing accessibility issues from empty markets, retrying sensibly, and always returning either real data or a clearly labeled estimate — never a silent gap.
 
-## Requirements
+`travel-itinerary-builder` ensures that lodging data, plus the narrative you wrote, survives into the final HTML instead of being flattened into a link list. It applies the same honesty rule to travel logistics: recommended departure times (not durations), named parking options, and real opening hours or explicit "not verified" labels — never plausible guesses.
 
-- Claude Cowork, or Claude Code with browser-automation tooling available (`mcp__claude-in-chrome__*` or `mcp__computer-use__*`, or an equivalent live-browser tool)
-- No API keys required — lodging search uses your existing browser access, and maps use OpenStreetMap link-outs
+---
 
 ## Installing
 
-**Claude Cowork:** install from [claude.com/plugins](https://claude.com/plugins/) once listed, or load the `.plugin` file directly.
+### Claude Cowork (recommended — fastest path)
 
-**Claude Code:** if this plugin is listed in a marketplace you've added, install it the standard way:
+1. Open Cowork.
+2. Go to **Customize** → **Plugins**.
+3. Click **+** → **Add marketplace**.
+4. Add this repository (`https://github.com/asoshnin/travel-planner`).
+5. Install **travel-planner**.
+
+Once listed on [claude.com/plugins](https://claude.com/plugins/), you can also install it directly from there.
+
+### Claude Code
+
+If this plugin is listed in a marketplace you've added:
 ```
 claude plugin marketplace add <marketplace-source>
 claude plugin install travel-planner@<marketplace-name>
 ```
-Otherwise, clone this repo and point Claude Code at the local `.claude-plugin` folder — see the [Claude Code plugin docs](https://docs.claude.com/en/docs/claude-code/plugins) for the current local-install steps.
+
+Otherwise, clone this repo and point Claude Code at the local `.claude-plugin` folder:
+```bash
+git clone https://github.com/asoshnin/travel-planner
+cd travel-planner
+claude plugin install .
+```
+
+See the [Claude Code documentation](https://docs.claude.com) for plugin installation details.
+
+---
+
+## Requirements
+
+- **Claude Cowork**, or **Claude Code** with browser-automation tooling available (`mcp__claude-in-chrome__*`, `mcp__computer-use__*`, or an equivalent live-browser tool)
+  - Live lodging search requires your Claude environment to control a browser. If your setup cannot browse booking sites, see Limitations → "Live prices depend on site accessibility" for fallback behavior.
+- **No API keys required** — lodging search uses your existing browser access, and maps use OpenStreetMap link-outs.
+
+---
 
 ## Using it
 
@@ -79,7 +136,16 @@ The itinerary builder will ask a short set of clarifying questions (dates, budge
 
 ### Choosing a booking-site scope
 
-By default, `lodging-search` uses mainstream global sites (Booking.com, Expedia, Airbnb, etc.). If you have a payment-method constraint or a regional preference, say so — for example "only search sites that work from China" — and it will offer a matching preset, or you can just name the exact sites you want it to use. See [`skills/lodging-search/references/site-presets.md`](skills/lodging-search/references/site-presets.md) for the built-in presets and how to add your own.
+By default, `lodging-search` uses mainstream global sites (Booking.com, Expedia, Airbnb, etc.). If you have a payment-method constraint or a regional preference, say so — for example "only search sites that work from China" — and it will offer a matching preset, or you can just name the exact sites you want it to use. See the plugin's lodging-search documentation for built-in site presets and how to add your own.
+
+---
+
+## Limitations
+
+- **Live prices depend on site accessibility** — if a booking site is experiencing downtime, has an active anti-bot measure, or requires JavaScript execution beyond the plugin's browser tooling, live search will fall back to a labeled estimate.
+- **Booking-site coverage varies by region** — some sites operate in only certain countries or require local payment methods. The plugin will indicate which sites are available for your destination.
+- **Restaurant hours and parking details** are verified via web search where possible, but explicit "not confirmed" labels indicate where real-time verification wasn't available. Always confirm time-sensitive details before travel.
+- **Static HTML output** means the itinerary doesn't auto-update if hotel prices or restaurant hours change after generation — you're responsible for spot-checking before booking.
 
 ---
 
