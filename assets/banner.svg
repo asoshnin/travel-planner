@@ -1,0 +1,35 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffdf9"/>
+      <stop offset="100%" stop-color="#f8f4ee"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a8462f" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#a8462f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect x="1" y="1" width="1198" height="318" rx="14" fill="url(#bg)" stroke="#e4ddd3" stroke-width="1.5"/>
+
+  <!-- title -->
+  <text x="80" y="120" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700" fill="#2b2825">Travel Planner</text>
+  <line x1="82" y1="140" x2="560" y2="140" stroke="#2b2825" stroke-width="2"/>
+  <text x="82" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-style="italic" fill="#6b6259">Live lodging search, and a printable itinerary — for Claude Cowork &amp; Claude Code</text>
+
+  <!-- quiet waypoint route -->
+  <g>
+    <circle cx="150" cy="228" r="20" fill="url(#glow1)"/>
+    <circle cx="610" cy="248" r="20" fill="url(#glow1)"/>
+    <circle cx="1080" cy="200" r="20" fill="url(#glow1)"/>
+
+    <path d="M90,235 Q330,190 610,248 T1130,195"
+          fill="none" stroke="#6b6259" stroke-width="2.5"
+          stroke-dasharray="1.5 11" stroke-linecap="round" opacity="0.7"/>
+
+    <circle cx="150" cy="228" r="7" fill="#fffdf9" stroke="#a8462f" stroke-width="3"/>
+    <circle cx="610" cy="248" r="7" fill="#fffdf9" stroke="#a8462f" stroke-width="3"/>
+    <circle cx="1080" cy="200" r="7" fill="#fffdf9" stroke="#a8462f" stroke-width="3"/>
+  </g>
+</svg>
