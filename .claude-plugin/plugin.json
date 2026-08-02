@@ -1,11 +1,11 @@
 {
-    "name": "travel-planner",
-    "version": "0.1.0",
-    "description": "Plan multi-stop road trips: live lodging search across configurable booking-site presets, and a polished, printable, multilingual HTML itinerary builder with embedded licensed photos and up to 3 compared lodging options per stop.",
-    "author": {
-          "name": "Alexey"
-    },
-    "homepage": "",
-    "license": "MIT",
-    "keywords": ["travel", "itinerary", "trip-planning", "lodging", "hotel-search", "road-trip"]
+  "name": "travel-planner",
+  "version": "0.1.0",
+  "description": "Plan multi-stop road trips: live lodging search across configurable booking-site presets, and a polished, printable, multilingual HTML itinerary builder with embedded licensed photos, up to 3 compared lodging options per stop, and verified departure times, parking, and named-venue opening hours for every leg.",
+  "author": {
+    "name": "Alexey"
+  },
+  "homepage": "https://github.com/asoshnin/travel-planner",
+  "license": "MIT",
+  "keywords": ["travel", "itinerary", "trip-planning", "lodging", "hotel-search", "road-trip"]
 }
