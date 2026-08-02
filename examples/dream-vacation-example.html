@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Someday Italy Loop — 6-Day Sample Itinerary</title>
+<style>
+  :root {
+    --ink: #2b2825;
+    --muted: #6b6259;
+    --accent: #a8462f;
+    --line: #e4ddd3;
+    --paper: #fffdf9;
+    --card: #f8f4ee;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.55;
+    font-size: 16px;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 40px 28px 80px; }
+  header.hero { text-align: center; margin-bottom: 8px; }
+  header.hero h1 {
+    font-size: 2.1rem;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  header.hero p.sub {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0 0 20px;
+    font-style: italic;
+  }
+  .disclaimer {
+    background: #fbf2e6;
+    border: 1px solid #eddcc0;
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    margin: 18px 0 34px;
+  }
+  .disclaimer strong { color: var(--accent); }
+  .prompt-box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.92rem;
+    margin: 0 0 36px;
+    color: #3d3934;
+  }
+  table.profile { width: 100%; border-collapse: collapse; margin: 0 0 36px; font-size: 0.95rem; }
+  table.profile td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.profile td:first-child { color: var(--muted); width: 30%; font-style: italic; }
+  h2.section {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 48px 0 16px;
+  }
+  h3.stop {
+    font-size: 1.3rem;
+    margin: 0 0 4px;
+    color: var(--accent);
+  }
+  .stop-meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 16px; }
+  .stop-meta a { color: var(--muted); }
+  figure { margin: 0 0 20px; }
+  figure img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+  figcaption {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 6px;
+    text-align: right;
+  }
+  figcaption a { color: var(--muted); }
+  .day-block { margin-bottom: 18px; }
+  .day-block b { color: var(--ink); }
+  .why-this-works {
+    background: var(--card);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0 36px;
+    font-size: 0.97rem;
+  }
+  .why-this-works b { color: var(--accent); }
+  .logistics {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 0 0 20px;
+    font-size: 0.93rem;
+  }
+  .logistics b { color: var(--accent); }
+  .logistics + .logistics { margin-top: -8px; }
+  table.lodging {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 10px;
+    font-size: 0.88rem;
+  }
+  table.lodging th, table.lodging td {
+    border: 1px solid var(--line);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.lodging th {
+    background: var(--card);
+    font-weight: 700;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .illustrative-note {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 32px;
+  }
+  ul.practical { padding-left: 20px; font-size: 0.95rem; }
+  ul.practical li { margin-bottom: 8px; }
+  .freshness {
+    background: #f2f0ec;
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    margin: 30px 0;
+  }
+  .credits {
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    margin-top: 40px;
+  }
+  .credits ul { padding-left: 18px; }
+  .credits a { color: var(--muted); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  @media print {
+    body { background: #fff; font-size: 12pt; }
+    .disclaimer { background: #fff; border-color: #999; }
+    .why-this-works, .freshness, .logistics { background: #fff; border: 1px solid #ccc; }
+    table.lodging th { background: #fff; }
+    figure img { max-height: 280px; }
+    a { color: var(--ink); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>The Someday Italy Loop</h1>
+    <p class="sub">A 6-day sample road trip: Cinque Terre → Tuscany → Amalfi Coast</p>
+  </header>
+
+  <div class="disclaimer">
+    <strong>This is a fictional demo, not a real trip.</strong> It's a sample output built to show what <code>travel-planner</code> produces — not the author's actual vacation (his real budget currently tops out at a weekend camping trip, tent included). Every price below is illustrative, not a live quote. If this repo gets enough stars, maybe someday it'll fund the real thing.
+    <br><br>
+    <strong>The parking, restaurant, landmark, and opening-hours details below are real</strong> — verified via web search while building this example, with sources linked inline — because that's what this skill is supposed to do on a real run. Only the lodging prices are placeholders. Hours and prices can still change after this was written — confirm anything time-sensitive before you travel.
+  </div>
+
+  <div class="prompt-box">
+    "Plan a 6-day road trip landing in Pisa, hitting Cinque Terre, Tuscany, and the Amalfi Coast, flying out of Naples. Two adults, relaxed pace, boutique/small hotels, mid-range budget, English."
+  </div>
+
+  <h2 class="section">Traveler Profile</h2>
+  <table class="profile">
+    <tr><td>Dates</td><td>6 days / 5 nights (illustrative — no fixed calendar dates)</td></tr>
+    <tr><td>Travelers</td><td>2 adults</td></tr>
+    <tr><td>Pace</td><td>Relaxed — 2 nights per stop, no single-night hotel-hopping</td></tr>
+    <tr><td>Lodging / budget</td><td>Boutique or small independent hotels, mid-range</td></tr>
+    <tr><td>Priorities</td><td>Scenery, food, walkable historic centers, one full "do nothing" afternoon per stop</td></tr>
+    <tr><td>Constraints</td><td>Automatic-transmission rental; driver not comfortable on narrow cliff roads at night</td></tr>
+    <tr><td>Output language</td><td>English</td></tr>
+    <tr><td>Printable</td><td>Yes (default)</td></tr>
+  </table>
+
+  <h2 class="section">Route Overview</h2>
+  <p>Pisa (fly in) → <b>Vernazza, Cinque Terre</b> (2 nights) → <b>San Gimignano, Tuscany</b> (2 nights) → <b>Positano, Amalfi Coast</b> (2 nights) → Naples (fly out)</p>
+
+  <div class="why-this-works">
+    <b>Why this route works:</b> it runs north to south in one direction, so there's no backtracking — each leg is a genuine step toward the airport you're leaving from. Cinque Terre first, while the legs are freshest, since its best moments reward walking, not driving. Tuscany in the middle absorbs the longest single drive as a full travel day with a wine-region lunch break built in. Amalfi goes last and closest to Naples airport, because that coast road is the one place on this trip worth being rested for, not rushed through.
+    <br><br>Total driving across the trip: roughly 6.5–7 hours, split across two travel days — never more than about 4 hours in one sitting.
+  </div>
+
+  <!-- STOP 1: VERNAZZA -->
+  <h2 class="section">Day 1–2 · Vernazza, Cinque Terre</h2>
+  <h3 class="stop">Staying at: Vernazza</h3>
+  <p class="stop-meta"><a href="https://www.openstreetmap.org/search?query=Vernazza%2C%20Italy" target="_blank">View on OpenStreetMap →</a></p>
+
+  <figure>
+    <img src="assets/vernazza.jpg" alt="Vernazza harbor, Cinque Terre">
+    <figcaption>Vernazza harbor — Mike Norton, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank">CC BY 2.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Vernazza,_Cinque_Terre,_Italy.jpg" target="_blank">Wikimedia Commons</a></figcaption>
+  </figure>
+
+  <div class="logistics"><b>Getting here:</b> Land in Pisa, pick up the rental car, and aim to leave the airport by <b>10:30 AM</b> — Vernazza's own parking is small and fills fast, so earlier is genuinely better. Drive north (about 1 hr 15 to the La Spezia area; allow a 20–30 min buffer for airport-lot traffic and the last stretch of coastal road).</div>
+  <div class="logistics"><b>Parking:</b> <a href="https://www.vernazzaparking.it/english/index.html" target="_blank">Vernassoa Parking</a> — guarded, shuttle to the village roughly 8 AM–8 PM, ~€2.50/hour or ~€20/day. Fills up in summer; fallback is parking in Monterosso, Levanto, or La Spezia and taking the train in.</div>
+
+  <p>Vernazza is the one with the harbor everyone photographs — a tight cluster of pastel buildings wrapped around a natural breakwater, with the ruins of a 14th-century watchtower over the water. Base here rather than in Monterosso (bigger, busier) or Riomaggiore (better nightlife, worse for an early one).</p>
+
+  <div class="day-block"><b>Day 1:</b> Arrive, settle in, walk the harbor at golden hour. Dinner: <a href="https://www.eng.ristorantebelforte.it/" target="_blank">Ristorante Belforte</a>, built into the old fortress on the cliff edge — widely considered the best table in Cinque Terre, ~€35–60/head. <b>Closed Tuesdays; reservations genuinely necessary</b> — book ahead.</div>
+  <div class="day-block"><b>Day 2:</b> The full "do nothing" day. Either the Sentiero Azzurro trail section toward Corniglia (check open/closed status locally — sections close for maintenance and after storm damage more often than people expect), or the climb up to <a href="https://en.milazzo.life/visitare-castello-doria-di-vernazza/" target="_blank">Doria Castle</a>, the watchtower ruins above the harbor (summer hours, June–Sept, roughly 11 AM–7 PM, ~€2.20 admission, but shift with season/weather — confirm locally). Dinner in Vernazza again rather than train-hopping for one more town — this is the relaxed-pace request in action.</div>
+
+  <p class="illustrative-note">Lodging options below are illustrative, not a live search result — see the note at the end of this page.</p>
+  <table class="lodging">
+    <tr><th></th><th>Option A</th><th>Option B</th><th>Option C</th></tr>
+    <tr><td><b>Type</b></td><td>Boutique harbor-view hotel</td><td>Family-run guesthouse</td><td>Restored village apartment</td></tr>
+    <tr><td><b>Illustrative nightly range</b></td><td>€220–260</td><td>€120–150</td><td>€160–190</td></tr>
+    <tr><td><b>Pros</b></td><td>Harbor view from most rooms; breakfast terrace</td><td>Genuinely local, half the price, walkable</td><td>Kitchenette; most space for the money</td></tr>
+    <tr><td><b>Cons</b></td><td>Books out months ahead in peak season; no elevator</td><td>No view, thin walls in the older wing</td><td>10-min uphill walk with luggage; no daily housekeeping</td></tr>
+  </table>
+
+  <!-- STOP 2: SAN GIMIGNANO -->
+  <h2 class="section">Day 3–4 · San Gimignano, Tuscany</h2>
+  <h3 class="stop">Staying at: San Gimignano</h3>
+  <p class="stop-meta"><a href="https://www.openstreetmap.org/search?query=San%20Gimignano%2C%20Italy" target="_blank">View on OpenStreetMap →</a></p>
+
+  <figure>
+    <img src="assets/san-gimignano.jpg" alt="San Gimignano medieval towers, Tuscany">
+    <figcaption>San Gimignano's medieval towers — Silvia1411, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:San_Gimignano_-_Citt%C3%A0_fortificata_-_2023-09-30_11-51-02_001.jpg" target="_blank">Wikimedia Commons</a></figcaption>
+  </figure>
+
+  <div class="logistics"><b>Getting here:</b> Recommended departure from the La Spezia/Vernazza area: <b>10:30 AM</b>, to arrive by early afternoon. Drive south (about 2 hr 45 with a stop; allow a 20-min buffer) into the Val d'Elsa. San Gimignano is nicknamed "the medieval Manhattan" for the 14 surviving stone towers (from an original 72) that noble families built centuries ago purely to outdo each other — a UNESCO World Heritage historic center that looks like a skyline from the 1300s.</div>
+  <div class="logistics"><b>Parking:</b> <a href="https://www.comune.sangimignano.si.it/it/page/p1-giubileo" target="_blank">Parcheggio Giubileo (P1)</a> — the official municipal lot, a few hundred meters south of the center. €2.00/hour (first two hours), €1.50/hour after, €7.00/24 hours. A shuttle bus (April–October, ~€1 round trip) connects it to town if you'd rather not walk.</div>
+
+  <div class="day-block"><b>Day 3:</b> Arrive by early afternoon, walk the town before the day-trip coach crowds arrive at midday tomorrow (San Gimignano is a popular bus-tour stop — early morning and evening are noticeably quieter). Dinner: <a href="https://www.vecchiemura.it/en/" target="_blank">Le Vecchie Mura</a>, built into the old city walls with panoramic Val d'Elsa views — wild boar ragu or a T-bone, with a glass of Vernaccia di San Gimignano, the town's own DOCG white. <b>Dinner only, roughly 6:00–9:45 PM, Wed–Mon; closed Tuesdays.</b> Book ahead in peak season.</div>
+  <div class="day-block"><b>Day 4:</b> Climb <a href="https://www.san-gimignano-tickets.com/san-gimignano-civic-museums/" target="_blank">Torre Grossa</a>, the tallest surviving tower (the only one open to visitors) and its civic museum. Hours: <b>9 AM–7 PM (Apr–Sep), 11 AM–5 PM (Oct–Mar)</b>, last entry 30 min before close — €9, or a €15 two-day pass covering all civic museums. Then a half-day out into the countryside — a small vineyard visit near the town (many take walk-ins, some require booking a day ahead) — then back for the "do nothing" half: a slow lunch, an afternoon in the shade of the Piazza della Cisterna.</div>
+
+  <p class="illustrative-note">Lodging options below are illustrative, not a live search result.</p>
+  <table class="lodging">
+    <tr><th></th><th>Option A</th><th>Option B</th><th>Option C</th></tr>
+    <tr><td><b>Type</b></td><td>Countryside agriturismo, 10 min out</td><td>In-town boutique hotel, tower view</td><td>Small in-town B&amp;B</td></tr>
+    <tr><td><b>Illustrative nightly range</b></td><td>€180–210</td><td>€200–240</td><td>€110–140</td></tr>
+    <tr><td><b>Pros</b></td><td>Pool, vineyard views, quiet at night</td><td>Walk everywhere; several rooms face the towers</td><td>Cheapest, warm hosts, good breakfast</td></tr>
+    <tr><td><b>Cons</b></td><td>Needs the car for every trip into town</td><td>Can hear the evening piazza crowd from lower floors</td><td>Small rooms, stairs only</td></tr>
+  </table>
+
+  <!-- STOP 3: POSITANO -->
+  <h2 class="section">Day 5–6 · Positano, Amalfi Coast</h2>
+  <h3 class="stop">Staying at: Positano</h3>
+  <p class="stop-meta"><a href="https://www.openstreetmap.org/search?query=Positano%2C%20Italy" target="_blank">View on OpenStreetMap →</a></p>
+
+  <figure>
+    <img src="assets/positano.jpg" alt="Positano cliffside village, Amalfi Coast">
+    <figcaption>Positano — Alexis Lours, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:View_of_Positano.jpg" target="_blank">Wikimedia Commons</a></figcaption>
+  </figure>
+
+  <div class="logistics"><b>Getting here:</b> This is the leg where the departure time is a safety decision, not a convenience one. Recommended departure from San Gimignano: <b>11:00 AM</b>, to arrive Positano by mid-afternoon — well before dusk, with margin to spare. The drive itself is the longest of the trip (about 3 hr 15, more with summer traffic; build in a 30–45 min buffer), and the one genuinely demanding stretch: the SS163 coast road is narrow, cliff-hugging, and has blind hairpin turns with tour buses coming the other way. <b>This is the one leg where "not comfortable driving narrow cliff roads at night" actually matters</b> — a smaller/compact rental is a real asset here, not just a preference. There's no toll road shortcut around this — the SS163 is the route.</div>
+  <div class="logistics"><b>Parking:</b> Positano's center is car-free, and there's no single unified municipal parking site the way San Gimignano has — each lot is independently run. The two closest to the center are <b>De Gennaro</b> and <b>Mandara</b>, both around €8–10/hour. <i>(Source: <a href="https://www.locautorent.com/en/blog/how-to-get-to-positano-traffic-restricted-traffic-zone-and-parking/" target="_blank">Locauto</a>, <a href="https://www.positano.com/en/e/parking-on-amalfi-coast" target="_blank">Positano.com</a>)</i> Leave the car at whichever has space and walk (or take the local bus/boat) from there.</div>
+
+  <p>Positano itself is a vertical town — houses stacked up the cliffside above a small beach, no flat ground to speak of.</p>
+
+  <div class="day-block"><b>Day 5:</b> Arrive, settle in, walk down to the beach for a late-afternoon swim. Dinner: <a href="https://www.brunopositano.it/" target="_blank">Ristorante Bruno</a>, a cliff-hugging terrace with sunset views over the town and sea, family-run since 1959 — worth booking specifically for that view, 3–4 weeks ahead in peak season. <b>Hours weren't consistently confirmed across sources</b> (reports range roughly 11:30 AM–11:30 PM, no clear weekly closure found) — confirm via the <a href="https://ristorante-bruno.resos.com/booking" target="_blank">official booking page</a>.</div>
+  <div class="day-block"><b>Day 6:</b> The do-nothing day, properly — a half-day boat trip along the coast (weather permitting) is the local way to see Positano the way it's actually meant to be seen: from the water, looking up. For a quieter morning stop, <a href="https://chiesapositano.it/en/opening-hours-and-visits/" target="_blank">Chiesa di Santa Maria Assunta</a> — the church with Positano's landmark majolica-tiled dome — is open daily, <b>9:30 AM–noon and 4–8 PM</b>, free entry (small fee only for the crypt). Go early morning or late afternoon; it hosts weddings and services on weekends. Afternoon free for the beach or the shopping streets. Recommended departure the next morning: <b>9:00 AM</b> for the ~1-hour drive to Naples airport — adjust to your flight time, and separately budget a ~2-hour arrival cushion (distinct from the drive-time buffer) for rental drop-off, the parking-lot walk, and airport processing.</div>
+
+  <p class="illustrative-note">Lodging options below are illustrative, not a live search result.</p>
+  <table class="lodging">
+    <tr><th></th><th>Option A</th><th>Option B</th><th>Option C</th></tr>
+    <tr><td><b>Type</b></td><td>Clifftop hotel, sea-view terrace</td><td>Mid-tier B&amp;B, short walk to beach</td><td>Small hotel, upper town</td></tr>
+    <tr><td><b>Illustrative nightly range</b></td><td>€350–420</td><td>€160–190</td><td>€190–220</td></tr>
+    <tr><td><b>Pros</b></td><td>The view — genuinely worth it for one or two nights</td><td>Closest to the beach, best value for the location</td><td>Quieter, better parking access nearby</td></tr>
+    <tr><td><b>Cons</b></td><td>Steep steps everywhere, least accessible option</td><td>No sea view, smaller rooms</td><td>10+ min walk down to the water (and back up)</td></tr>
+  </table>
+
+  <h2 class="section">Practical Notes</h2>
+  <ul class="practical">
+    <li><b>Driving:</b> an automatic-transmission compact car, booked well ahead — automatics are less common and cost more in Italy, and a compact matters specifically for the Amalfi Coast leg.</li>
+    <li><b>Parking:</b> none of the town centers on this route allow cars in; every stop above has a named, linked parking option and a fallback if it's full.</li>
+    <li><b>ZTL zones:</b> Positano and San Gimignano both have restricted traffic zones (ZTL) in their historic cores — driving into one without authorization risks an automatic fine by camera. Confirm your hotel's guidance before driving in.</li>
+    <li><b>Timing the Amalfi leg:</b> deliberately scheduled to arrive before dusk, given the stated driver comfort constraint — see the departure-time recommendation above.</li>
+    <li><b>Reservations:</b> book Ristorante Belforte and Ristorante Bruno ahead, not on arrival — both genuinely need it in peak season.</li>
+    <li><b>Payment/connectivity:</b> no time zone change or border crossing on this route; card payment is standard at all named venues above, though it's worth carrying some euros for smaller cash-preferred spots.</li>
+  </ul>
+
+  <div class="freshness">
+    <b>Data freshness:</b> This is a fictional, illustrative example built to demonstrate the plugin's output. The <b>lodging prices are placeholders</b> — not a live search result — a real run of <code>lodging-search</code> returns three actual, dated listings per stop from your confirmed booking sites, each labeled with the date they were retrieved and a reminder to verify before booking, since prices change. The <b>parking, restaurant, and opening-hours information above was verified via web search</b> while building this example (sources in the accompanying draft) — but hours, prices, and closures can still shift, so confirm anything time-sensitive before you travel.
+  </div>
+
+  <div class="credits">
+    <b>Photo credits</b>
+    <ul>
+      <li>San Gimignano skyline — Silvia1411, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:San_Gimignano_-_Citt%C3%A0_fortificata_-_2023-09-30_11-51-02_001.jpg" target="_blank">Wikimedia Commons</a></li>
+      <li>Positano view — Alexis Lours, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:View_of_Positano.jpg" target="_blank">Wikimedia Commons</a></li>
+      <li>Vernazza harbor — Mike Norton, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank">CC BY 2.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Vernazza,_Cinque_Terre,_Italy.jpg" target="_blank">Wikimedia Commons</a></li>
+    </ul>
+    <p>This page is a fictional demo generated to showcase <code>travel-planner</code> — <a href="https://github.com/asoshnin/travel-planner" target="_blank">github.com/asoshnin/travel-planner</a></p>
+  </div>
+
+</div>
+</body>
+</html>
