@@ -1,0 +1,13 @@
+# Design Philosophy: "Quiet Waypoints"
+
+This is a working brief for a functional software banner, not a gallery piece — so this philosophy adapts the usual studio language toward legibility, restraint, and instant recognition rather than abstraction. A GitHub visitor decides whether to keep reading within about three seconds; the design's job is to win that window, not to reward slow contemplation.
+
+**The philosophy:** a single dashed line, drawn once, unbroken, connecting a small handful of waypoints across quiet negative space. The line does the emotional work — it is the road, the itinerary, the thread a traveler follows from one stop to the next — while everything else steps back to let it read clearly. No skyline, no postcard cliché, no cluttered iconography competing for attention. Restraint is the craft here: the fewer marks on the page, the more deliberate each one must be, and every curve of that line is placed with the same care a cartographer gives a coastline.
+
+**Color and material:** the palette is inherited directly from the document this banner sits above — warm paper, muted ink, a single terracotta accent — so the banner reads as one continuous object with the README rather than a bolted-on graphic. No new colors are introduced. The waypoint markers carry the one accent color sparingly, so the eye has exactly one place to land after the type.
+
+**Type as landmark:** the title is set large enough to anchor the composition on its own, in the same serif already carrying the document's voice — this is not a place for a second typeface or a display face fighting for attention. A single thin rule beneath it, matching the document's own section dividers, is the only structural device besides the road line itself. Subtitle text is small, quiet, and set once — never repeated, never restated.
+
+**Craftsmanship as the actual subject:** because so little is on the page, every remaining element must be flawless — the bezier of the road line hand-tuned rather than a default curve, the waypoint spacing considered rather than mechanical, the margins checked so nothing crowds the frame. This is the kind of banner that looks like it took an afternoon of quiet iteration rather than one pass — plain enough to read in half a second, considered enough to reward a second look.
+
+**The subtle reference:** the road line traces a loose, understated arc rather than a straight or perfectly smooth curve — a quiet nod to the specific north-to-south Cinque Terre → Tuscany → Amalfi route in the worked example just below it in the README, without spelling that out or requiring the viewer to know it. Someone who's read the example may notice the shape rhymes with that route; everyone else just sees a graceful line.
