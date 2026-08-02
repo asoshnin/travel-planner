@@ -79,7 +79,7 @@ The itinerary builder will ask a short set of clarifying questions (dates, budge
 
 ### Choosing a booking-site scope
 
-By default, `lodging-search` uses mainstream global sites (Booking.com, Expedia, Airbnb, etc.). If you have a payment-method constraint or a regional preference, say so — for example "I only have a MIR card" or "only search sites that work from Brazil" — and it will offer a matching preset, or you can just name the exact sites you want it to use. See [`skills/lodging-search/references/site-presets.md`](skills/lodging-search/references/site-presets.md) for the built-in presets and how to add your own.
+By default, `lodging-search` uses mainstream global sites (Booking.com, Expedia, Airbnb, etc.). If you have a payment-method constraint or a regional preference, say so — for example "only search sites that work from China" — and it will offer a matching preset, or you can just name the exact sites you want it to use. See [`skills/lodging-search/references/site-presets.md`](skills/lodging-search/references/site-presets.md) for the built-in presets and how to add your own.
 
 ---
 
