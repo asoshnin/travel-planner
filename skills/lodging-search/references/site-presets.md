@@ -21,7 +21,7 @@ Use when the user mentions a MIR debit/credit card, a Russian billing address, o
 - travelata.ru
 - level.travel
 - aviasales.ru/hotels
-- tinkoff.ru/travel
+- t-bank.ru/travel (formerly tinkoff.ru/travel — Tinkoff Bank rebranded to T-Bank in 2024; verify the current domain before use, as it may still redirect)
 
 Fallback if these return nothing usable for a stop (only with the user's standing approval to fall back): airbnb.com, booking.com — label results from these distinctly, since MIR-payment fit is less certain there.
 
