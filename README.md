@@ -97,7 +97,8 @@ New to installing Claude plugins? Follow these steps exactly — every click is 
 
 1. Open Cowork and go to **Customize** → **Plugins**.
 2. Click **+** → **Add marketplace**.
-3. In the **URL** field, paste this exact address:
+3. You'll see two options — click **Add from a repository** (not "Browse Anthropic sources," which is only for Anthropic's own curated catalog).
+4. In the **URL** field, paste this exact address:
    ```
    https://github.com/asoshnin/travel-planner
    ```
@@ -105,8 +106,8 @@ New to installing Claude plugins? Follow these steps exactly — every click is 
    >
    > ✅ Correct: `https://github.com/asoshnin/travel-planner`
    > ❌ Wrong: `https://github.com/asoshnin/travel-planner/tree/main`
-4. Click **Sync**. This step is required — pasting the URL alone doesn't install anything.
-5. Cowork will show the plugin found in this repository. Find **travel-planner** in that list and click **Install** next to it.
+5. Click **Sync**. If you haven't connected GitHub to Cowork before, you'll be prompted to do so now — this connects **your own** GitHub account, not the plugin author's. It's a one-time step Cowork uses to verify access and fetch the repository; since this repo is public, any GitHub account works. You are not asking anyone for permission.
+6. Cowork will show the plugin found in this repository. Find **travel-planner** in that list and click **Install** next to it.
 
 That's it — the `lodging-search` and `travel-itinerary-builder` skills are now available. Type `/travel-itinerary-builder` in a chat to confirm it worked.
 
