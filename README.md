@@ -93,23 +93,34 @@ Most AI-generated itineraries either hallucinate hotel prices or leave placehold
 
 ### Claude Cowork (recommended — fastest path)
 
-1. Open Cowork.
-2. Go to **Customize** → **Plugins**.
-3. Click **+** → **Add marketplace**.
-4. Add this repository (`https://github.com/asoshnin/travel-planner`).
-5. Install **travel-planner**.
+New to installing Claude plugins? Follow these steps exactly — every click is listed.
 
-Once listed on [claude.com/plugins](https://claude.com/plugins/), you can also install it directly from there.
+1. Open Cowork and go to **Customize** → **Plugins**.
+2. Click **+** → **Add marketplace**.
+3. In the **URL** field, paste this exact address:
+   ```
+   https://github.com/asoshnin/travel-planner
+   ```
+   > ⚠️ **Common mistake:** if you copy the link from your browser's address bar while looking at this repo on GitHub, it may include extra text like `/tree/main` at the end. **Remove that suffix** — the URL must end in `travel-planner`, nothing after it.
+   >
+   > ✅ Correct: `https://github.com/asoshnin/travel-planner`
+   > ❌ Wrong: `https://github.com/asoshnin/travel-planner/tree/main`
+4. Click **Sync**. This step is required — pasting the URL alone doesn't install anything.
+5. Cowork will show the plugin found in this repository. Find **travel-planner** in that list and click **Install** next to it.
+
+That's it — the `lodging-search` and `travel-itinerary-builder` skills are now available. Type `/travel-itinerary-builder` in a chat to confirm it worked.
+
+*(Once this plugin is listed on [claude.com/plugins](https://claude.com/plugins/) in the future, you'll also be able to install it directly from there.)*
 
 ### Claude Code
 
-If this plugin is listed in a marketplace you've added:
+Add the marketplace, then install by name:
 ```
-claude plugin marketplace add <marketplace-source>
-claude plugin install travel-planner@<marketplace-name>
+claude plugin marketplace add https://github.com/asoshnin/travel-planner
+claude plugin install travel-planner@travel-planner
 ```
 
-Otherwise, clone this repo and point Claude Code at the local `.claude-plugin` folder:
+**Alternative — local install without adding a marketplace:** clone the repo and install directly from your own machine:
 ```bash
 git clone https://github.com/asoshnin/travel-planner
 cd travel-planner
