@@ -77,6 +77,8 @@ Use this structure per property (live result):
 - Link: [URL]
 - Pro: [specific, concrete reason to pick this one]
 - Con: [specific, concrete tradeoff — never omit this]
+- **Source:** [tool chain used] → [domain] (retrieved [ISO 8601 timestamp])
+  - Example: `mcp__claude-in-chrome__navigate + mcp__claude-in-chrome__read_page → booking.com (retrieved 2026-08-03T14:32Z)`
 ```
 
 Use this structure when live search failed for a stop (degraded estimate — never a bare blocker):
@@ -85,8 +87,32 @@ Use this structure when live search failed for a stop (degraded estimate — nev
 ### [Location] — Estimated only (live search unavailable)
 - Typical property type for this budget band: [e.g. "1-2BR self-catering apartment"]
 - Estimated nightly range: [range] — **not live-sourced; verify before booking**
-- Reason live search failed: [tool unavailable / CAPTCHA on all sites in scope / genuinely zero inventory found]
+- **Fallback Reason:** [structured reason code with required evidence]
 - Manual verification: [specific site + search terms to try]
+```
+
+**Required fallback reason codes and evidence:**
+
+- `reason: tool_unavailable`
+  - Evidence required: Tool check result (e.g., `list_connected_browsers returned no mcp__claude-in-chrome__* tools available`)
+  - Timestamp: [when tool check was performed]
+
+- `reason: captcha_on_all_sites_in_scope`
+  - Evidence required: `sites_attempted: [site1, site2, site3] | captcha_encountered: [site1 at HH:MM, site3 at HH:MM] | sites_skipped_due_to_prior_block: [site2]`
+  - Timestamp: [when final CAPTCHA block occurred]
+
+- `reason: zero_inventory`
+  - Evidence required: `sites_searched: [site1, site2, site3] | date_range_requested: [YYYY-MM-DD] to [YYYY-MM-DD] | result_count_all_sites: 0 | attempts_to_widen_dates: yes | date_range_widened: [YYYY-MM-DD] to [YYYY-MM-DD] | result_count_after_widening: 0`
+  - Timestamp: [when final search completed]
+
+**Example degraded estimate with evidence:**
+
+```md
+### Paris — Estimated only (live search unavailable)
+- Typical property type for this budget band: 2-3 star hotel or 1BR apartment
+- Estimated nightly range: EUR 80–150 — **not live-sourced; verify before booking**
+- **Fallback Reason:** reason: captcha_on_all_sites_in_scope | sites_attempted: [booking.com, expedia.com, airbnb.com] | captcha_encountered: [booking.com at 14:22, expedia.com at 14:25] | sites_skipped_due_to_prior_block: [airbnb.com, agoda.com hit CAPTCHA on earlier stop, reusing block] | timestamp: 2026-08-03T14:25Z
+- Manual verification: Search booking.com directly for Paris, 2026-08-10 to 2026-08-13
 ```
 
 Provide up to 3 candidates per stop (fewer only if genuinely fewer exist with usable data).
@@ -104,6 +130,39 @@ Provide up to 3 candidates per stop (fewer only if genuinely fewer exist with us
 ## Verification
 
 After search completes for each stop, verify: URLs correspond to the selected site's actual domain; dates in results match requested dates; the stop has either ≥1 live result or a degraded estimate block — never neither.
+
+## Pre-Delivery Self-Check (Mandatory Artifact)
+
+Before declaring the lodging search complete, you **must** produce and display the following per-stop verification table as a mandatory artifact. This table is not optional — you may proceed to delivery **only after** producing this table and confirming all checks pass.
+
+**Required columns:**
+- Stop (location name)
+- Live Search Attempted? (YES / NO)
+- Sites Checked (comma-separated list of domains actually visited)
+- CAPTCHA Encountered? (YES / NO, and if YES, which sites)
+- Fallback Used? (YES / NO)
+- Fallback Reason (if fallback used: structured reason code with evidence inline)
+- Result Count (e.g., "3 live + 0 est." or "0 live + 1 est.")
+
+**Example table:**
+
+```
+| Stop    | Live Search Attempted? | Sites Checked                             | CAPTCHA Encountered? | Fallback Used? | Fallback Reason | Result Count |
+|---------|------------------------|-------------------------------------------|----------------------|----------------|-----------------|--------------|
+| Paris   | YES                    | booking.com, airbnb.com, expedia.com      | YES (booking.com)    | YES            | reason: captcha_on_all_sites_in_scope \| sites_attempted: [booking.com, airbnb.com, expedia.com] \| captcha_encountered: [booking.com at 14:22] \| timestamp: 2026-08-03T14:22Z | 2 live + 1 est. |
+| Lyon    | YES                    | booking.com, airbnb.com                   | NO                   | NO             | N/A             | 3 live       |
+| Marseille | YES                  | booking.com, airbnb.com, expedia.com      | NO                   | NO             | N/A             | 3 live       |
+```
+
+**Verification checklist (you must confirm all before delivery):**
+- [ ] Every stop in the itinerary has an entry in the table
+- [ ] Every live result includes a "Source" line with tool chain and timestamp
+- [ ] Every degraded estimate (if any) includes structured fallback reason code with evidence
+- [ ] No stop is missing both live results and a degraded estimate (never a bare placeholder)
+- [ ] URLs in results match the confirmed site scope (Step 0)
+- [ ] Dates in results match the requested check-in and check-out dates
+
+**If any check fails:** Return to the search, correct the missing result or evidence, and re-produce the table before delivery.
 
 ## Notes
 

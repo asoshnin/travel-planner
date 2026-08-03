@@ -62,6 +62,20 @@ If no search tool is available, do not silently degrade field-by-field as you go
 
 5. **Source images for key locations.** For each major stop or highlight (not necessarily every single activity), find an openly-licensed photo (e.g. Wikimedia Commons) with clear attribution. Verify the license and author on the image's own page before using it — don't take a search snippet's word for the license. If no suitable licensed image is found for a location within a reasonable search effort, leave a labeled placeholder rather than using an unlicensed or unattributed image — a missing photo is honest; an uncredited one is a real risk. Record the source and license/attribution text alongside each image for the credits section. **Keep photo credits (license name, photographer's name, source) in their original form — do not translate license names or attribution text into the output language; these are legal/proper-noun terms and mistranslating them can misrepresent the license.**
 
+   **Mandatory Photo-Source Ledger:** For every image included, document the source in this format:
+   - **Photo Found:** Photo Source: Wikimedia Commons | License: CC-BY-SA 3.0 | Photographer: [Name] | URL: [license page]
+   - **No Photo Found:** Photo Source: No licensed image found (search attempt: [sites checked]) | Placeholder added: YES
+
+   Every stop must have one of these entries — there are no unmarked gaps.
+
+**Precondition: Photo sourcing complete and verified**
+
+Before proceeding to Step 6, verify that every major stop has:
+- [1] A licensed image with recorded source and attribution (in the mandatory Photo-Source Ledger format above), OR
+- [2] A visible placeholder line in the draft: `[NO LICENSED PHOTO FOUND — [reason] — placeholder]`
+
+A stop with neither an image nor a placeholder is a hard blocker. If this precondition is not met, return to Step 5 and complete photo sourcing for missing stops before proceeding to Step 6.
+
 6. **Build the static HTML itinerary page, in the confirmed language.** This is the step most likely to silently discard everything built in steps 2-5 if not done carefully — actively check against that failure mode. The page must:
    - **Preserve narrative content, not just links.** Port descriptive sentences (not compressed fragments), and include a condensed "Trip Overview / Why This Works" section carrying forward the route/lodging strategy reasoning from the draft, plus any safety-relevant modules (permits, licenses, tolls/vignettes) in full — these are functional content, not decoration, and must not be dropped.
    - **Default to a white/light background suitable for printing** — this is the default posture, not a special mode. If a dark on-screen theme is specifically requested, add a `@media print` override that switches to white background / dark text, hides non-printing elements (hover-only UI), and uses print-safe type sizing (≥12pt body text for anything meant to be read on paper).
@@ -74,6 +88,16 @@ If no search tool is available, do not silently degrade field-by-field as you go
    - **Escape/sanitize all user-provided and draft-sourced text** before embedding it in HTML, to prevent rendering issues from special characters.
 
 7. **Verify and deliver.**
+
+   **Mandatory Pre-Delivery Verification Artifact:** Before declaring the itinerary complete, produce and show a per-stop verification table. This table is a mandatory artifact; the itinerary cannot be delivered without it. The table must include every major stop and have these columns:
+
+   | Stop | Photo Found? | Photo Source | Placeholder if Not Found? | Narrative Present? | Lodging Present? | Logistics Complete? |
+   |------|--------------|--------------|---------------------------|-------------------|------------------|---------------------|
+   | [Stop Name] | YES/NO | [source + license] or [search attempt] | YES/NO if applicable | YES/NO | YES/NO | YES/NO |
+
+   **Hard-block rule:** Do not deliver if any row has **Photo Found = NO AND Placeholder if Not Found = NO**. This represents a gap in the sourcing mandate (Fix A). If you find such a row, return to Step 5 and complete photo sourcing before attempting delivery.
+
+   **Supporting verification checks (conduct before producing the table):**
    - Confirm every day has consistent structure (no day silently missing lodging/map sections it should have).
    - Confirm every stop has either live lodging options or an explicitly labeled degraded estimate — zero bare placeholders.
    - Confirm every narrative section from the source draft (strategy rationale, safety/permit info, practical logistics) survived into the HTML in some form, in the confirmed output language.
@@ -81,7 +105,8 @@ If no search tool is available, do not silently degrade field-by-field as you go
    - Confirm the page renders readably in print preview (white background, dark text, no reliance on background color alone for section separation).
    - Confirm all links correspond to approved domains (see below) and that any domain mentioned in body text — not just `<a href>` targets — is also checked, not only hyperlinked ones.
    - Confirm photo attribution text is intact and untranslated where required.
-   - Deliver the final files: refined itinerary draft, static HTML page.
+
+   **Delivery:** Once the verification table is complete and passes the hard-block check, deliver the final files: refined itinerary draft, static HTML page, and the verification table.
 
 ## Constraints
 
